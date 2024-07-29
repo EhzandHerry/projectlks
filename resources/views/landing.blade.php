@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('/images/gedung2.jpg') no-repeat center center fixed;
+            background: url('/images/banner.jpg') no-repeat center center fixed;
             background-size: cover;
             color: white;
         }
@@ -35,15 +35,21 @@
             font-size: 1.2rem;
         }
         .nav {
-            position: fixed; /* Change this to fixed */
+            position: fixed;
             top: 0;
             left: 0;
             right: 0;
             display: flex;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.7); /* Optional: Add a background color with some transparency */
-            padding: 10px 20px; /* Add some padding */
-            z-index: 1000; /* Ensure it stays above other elements */
+            padding: 10px 20px;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+        .nav.transparent {
+            background-color: transparent;
+        }
+        .nav.scrolled {
+            background-color: rgba(0, 0, 0, 0.7);
         }
         .nav a {
             color: white;
@@ -92,8 +98,8 @@
     </style>
 </head>
 <body>
-    <div class="nav">
-        <img src="/images/kominfo2.png" alt="Logo" class="logo">
+    <div class="nav transparent">
+        <img src="/images/kominfo3.png" alt="Logo" class="logo">
         <div class="menu">
             <a href="{{ url('/') }}">Home</a>
             <a href="{{ route('login') }}">Login</a>
@@ -109,19 +115,31 @@
             <div class="about-cards">
                 <div class="about-card">
                     <h3>Visi Kami</h3>
-                    <p>Menjadi lembaga terdepan dalam mempromosikan kesejahteraan sosial di Kota Yogyakarta, dengan pendekatan yang holistik dan berfokus pada pemberdayaan masyarakat.</p>
+                    <p>(Isi Visi)</p>
                 </div>
                 <div class="about-card">
                     <h3>Misi Kami</h3>
-                    <p>Melaksanakan program-program sosial yang bertujuan untuk meningkatkan kualitas hidup masyarakat, memberikan dukungan bagi kelompok rentan, dan mendorong partisipasi aktif seluruh lapisan masyarakat.</p>
+                    <p>(Isi Misi)</p>
                 </div>
                 <div class="about-card">
                     <h3>Nilai-Nilai Kami</h3>
-                    <p>Komitmen, Inovasi, Keberlanjutan, Transparansi, dan Kerja Sama. Kami percaya bahwa dengan nilai-nilai ini, kami dapat mencapai tujuan kami untuk masyarakat yang lebih sejahtera.</p>
+                    <p>(Isi Nilai-nilai)</p>
                 </div>
             </div>
         </div>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script>
+        document.addEventListener("scroll", function() {
+            const nav = document.querySelector(".nav");
+            if (window.scrollY > 50) {
+                nav.classList.add("scrolled");
+                nav.classList.remove("transparent");
+            } else {
+                nav.classList.add("transparent");
+                nav.classList.remove("scrolled");
+            }
+        });
+    </script>
 </body>
 </html>
