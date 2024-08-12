@@ -32,7 +32,7 @@
             @csrf
             <button type="submit" class="btn btn-secondary">Back to Landing Page</button>
         </form>
-        <a href="https://wa.link/qlmb7l" class="whatsapp-button" target="_blank" aria-label="Chat with us on WhatsApp">
+        <a href="https://api.whatsapp.com/send?phone=6281391150282&text=Halo%2C%20ada%20yang%20ingin%20saya%20tanyakan%20terkait%20websitenya!" class="whatsapp-button" target="_blank" aria-label="Chat with us on WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
