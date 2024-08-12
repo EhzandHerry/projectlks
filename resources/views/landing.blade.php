@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selamat Datang</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,20 +25,16 @@
             height: 100vh;
             text-align: center;
             position: relative;
-            /* Tambahkan posisi relatif untuk efek overlay */
         }
 
         .overlay {
             position: absolute;
-            /* Overlay di posisi absolut */
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             background: rgba(0, 0, 0, 0.5);
-            /* Warna overlay hitam dengan transparansi */
             z-index: 1;
-            /* Pastikan overlay di atas background */
         }
 
         .logo {
@@ -49,17 +46,13 @@
         .header {
             font-size: 4.5rem;
             font-weight: bold;
-            /* Diperbesar */
             margin: 20px 0;
             z-index: 2;
-            /* Pastikan teks di atas overlay */
         }
 
         .subheader {
             font-size: 1.0rem;
-            /* Diperbesar */
             z-index: 2;
-            /* Pastikan teks di atas overlay */
         }
 
         .nav {
@@ -68,7 +61,6 @@
             left: 0;
             right: 0;
             height: 120px;
-            /* Atur tinggi navigasi sesuai kebutuhan */
             display: flex;
             align-items: center;
             padding: 10px 20px;
@@ -137,9 +129,29 @@
         .about-card p {
             font-size: 1rem;
         }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-size: 24px;
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+        }
     </style>
-</head>
-</style>
 </head>
 
 <body>
@@ -151,7 +163,7 @@
         </div>
     </div>
     <div class="container">
-        <div class="overlay"></div> <!-- Overlay ditambahkan di sini -->
+        <div class="overlay"></div>
         <div class="header">Selamat Datang</div>
         <div class="subheader">Situs Resmi Lembaga Kesejahteraan Sosial Kota Yogyakarta</div>
     </div>
@@ -174,6 +186,13 @@
             </div>
         </div>
     </div>
+    <!-- Tombol WhatsApp -->
+    <a href="https://api.whatsapp.com/send?phone=6281391150282&text=Halo%2C%20ada%20yang%20ingin%20saya%20tanyakan%20terkait%20websitenya!" 
+       class="whatsapp-button" 
+       target="_blank" 
+       aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
     <script src="{{ asset('js/app.js') }}"></script>
     <script>
         document.addEventListener("scroll", function() {
