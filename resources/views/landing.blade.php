@@ -5,195 +5,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selamat Datang</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/landingpage/landingpage.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('/images/banner.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-            position: relative;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .logo {
-            width: 65px;
-            height: auto;
-            margin-left: 40px;
-        }
-
-        .header {
-            font-size: 4.5rem;
-            font-weight: bold;
-            margin: 20px 0;
-            z-index: 2;
-        }
-
-        .subheader {
-            font-size: 1.0rem;
-            z-index: 2;
-        }
-
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 120px;
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
-            z-index: 1000;
-            transition: background-color 0.3s ease;
-        }
-
-        .nav.transparent {
-            background-color: transparent;
-        }
-
-        .nav.scrolled {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        .nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 1rem;
-        }
-
-        .nav .menu {
-            margin-left: auto;
-            margin-right: 20px
-        }
-
-        .about-section {
-            background: white;
-            color: black;
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        .about-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about-title {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .about-cards {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .about-card {
-            background: #ffecec;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 10px;
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
-        }
-
-        .about-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-
-        .about-card p {
-            font-size: 1rem;
-        }
-
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            font-size: 24px;
-            text-decoration: none;
-            z-index: 1000;
-        }
-
-        .whatsapp-button:hover {
-            background-color: #128C7E;
-        }
-    </style>
 </head>
 
 <body>
     <div class="nav transparent">
         <img src="/images/logo.png" alt="Logo" class="logo">
         <div class="menu">
-            <a href="{{ url('/') }}">Home</a>
-            <a href="{{ route('login') }}">Login</a>
+            <a href="{{ url('/') }}">HOME</a>
+            <a href="{{ route('login') }}">LOGIN</a>
         </div>
     </div>
     <div class="container">
         <div class="overlay"></div>
-        <div class="header">Selamat Datang</div>
-        <div class="subheader">Situs Resmi Lembaga Kesejahteraan Sosial Kota Yogyakarta</div>
-    </div>
-    <div class="about-section">
-        <div class="about-container">
-            <div class="about-title">Tentang Kami</div>
-            <div class="about-cards">
-                <div class="about-card">
-                    <h3>Visi Kami</h3>
-                    <p>(Isi Visi)</p>
-                </div>
-                <div class="about-card">
-                    <h3>Misi Kami</h3>
-                    <p>(Isi Misi)</p>
-                </div>
-                <div class="about-card">
-                    <h3>Nilai-Nilai Kami</h3>
-                    <p>(Isi Nilai-nilai)</p>
-                </div>
-            </div>
+        <div class="text-box">
+            <h1 class="header">Selamat Datang</h1>
+            <p class="subheader">Situs Resmi Lembaga Kesejahteraan Sosial Kota Yogyakarta</p>
         </div>
     </div>
+
+    <!-- Wrapper untuk bagian bawah -->
+    <div class="content-wrapper">
+
+        <!-------- Tentang Kami -------->
+
+        <section class="news">
+            <h1>Tentang Kami</h1>
+            <p>Lembaga Kesejahteraan Sosial (LKS) Kota Yogyakarta berdedikasi untuk meningkatkan kesejahteraan
+                masyarakat
+                melalui berbagai program sosial yang inovatif dan berkelanjutan.</p>
+
+            <div class="row">
+                <div class="course-col">
+                    <h3>Visi Kami</h3>
+                    <p>Menjadi lembaga terdepan dalam mempromosikan kesejahteraan sosial di Kota Yogyakarta, dengan
+                        pendekatan yang holistik dan berfokus pada pemberdayaan masyarakat.</p>
+                </div>
+
+                <div class="course-col">
+                    <h3>Misi Kami</h3>
+                    <p>Melaksanakan program-program sosial yang bertujuan untuk meningkatkan kualitas hidup masyarakat,
+                        memberikan dukungan bagi kelompok rentan, dan mendorong partisipasi aktif seluruh lapisan
+                        masyarakat.</p>
+                </div>
+
+                <div class="course-col">
+                    <h3>Nilai-Nilai Kami</h3>
+                    <p>Komitmen, Inovasi, Keberlanjutan, Transparansi, dan Kerja Sama. Kami percaya bahwa dengan
+                        nilai-nilai
+                        ini, kami dapat mencapai tujuan kami untuk masyarakat yang lebih sejahtera.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-------- Gallery Kami -------->
+
+        <section class="gallery">
+            <h1>Gallery</h1>
+            <p>Lembaga Kesejahteraan Sosial (LKS) Kota Yogyakarta berdedikasi untuk meningkatkan kesejahteraan
+                masyarakat
+                melalui berbagai program sosial yang inovatif dan berkelanjutan.</p>
+
+            <div class="row-2">
+                <div class="gallery-col">
+                    <img src="../images/gallery-1.jpg" alt="" />
+                    <div class="layer">
+                        <h3>Kunjungan Diskominfo</h3>
+                    </div>
+                </div>
+                <div class="gallery-col">
+                    <img src="../images/gallery-2.jpg" alt="" />
+                    <div class="layer">
+                        <h3>Rapat Umum</h3>
+                    </div>
+                </div>
+                <div class="gallery-col">
+                    <img src="../images/gallery-3.png" alt="" />
+                    <div class="layer">
+                        <h3>Peghibahan Aplikasi</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-------- Footer -------->
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Lembaga Kesejahteraan Sosial Kota Yogyakarta. Semua Hak Dilindungi.</p>
+            <div class="social-media">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
     <!-- Tombol WhatsApp -->
-    <a href="https://api.whatsapp.com/send?phone=6281391150282&text=Halo%2C%20ada%20yang%20ingin%20saya%20tanyakan%20terkait%20websitenya!" 
-       class="whatsapp-button" 
-       target="_blank" 
-       aria-label="Chat with us on WhatsApp">
+    <a href="https://api.whatsapp.com/send?phone=6281391150282&text=Halo%2C%20ada%20yang%20ingin%20saya%20tanyakan%20terkait%20websitenya!"
+        class="whatsapp-button" target="_blank" aria-label="Chat with us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/landingpage/landingpage.js') }}"></script>
     <script>
         document.addEventListener("scroll", function() {
             const nav = document.querySelector(".nav");
@@ -207,5 +122,6 @@
         });
     </script>
 </body>
+
 
 </html>
